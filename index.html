@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="11sport.bet - Sports betting and casino platform." />
+    <title>11sport.bet | Sports & Live Betting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: '#e7fff3',
+                100: '#ccffe7',
+                400: '#42ff9a',
+                500: '#18dc77',
+                700: '#0a7f45',
+                900: '#042a18'
+              }
+            }
+          }
+        }
+      };
+    </script>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body class="bg-[#06120c] text-slate-100">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div id="app" data-page="home">
+      <div data-component="header"></div>
+
+      <div class="ticker-wrap">
+        <div class="mx-auto flex max-w-[1400px] gap-3 px-4 py-2" id="ticker-strip"></div>
+      </div>
+
+      <main id="main-content" class="mx-auto max-w-[1400px] px-4 pb-20 pt-4 lg:pb-16">
+        <div class="layout-grid">
+          <aside class="section-card hidden xl:block xl:sticky xl:top-4 xl:h-fit">
+            <div class="section-head">
+              <h2>All Sports</h2>
+            </div>
+            <div id="sports-menu" class="mt-3 grid gap-2"></div>
+          </aside>
+
+          <div>
+            <section class="hero-shell rounded-2xl p-6 md:p-8">
+              <div class="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+                <div>
+                  <p class="mb-3 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-xs font-semibold uppercase text-emerald-100">Live Markets Open</p>
+                  <h1 class="text-3xl font-extrabold leading-tight md:text-5xl">Bet Smarter On <span class="text-emerald-400">11sport.bet</span></h1>
+                  <p class="mt-4 max-w-xl text-slate-300">Sportsbook, live betting, casino and promotions in one high-performance platform with instant updates.</p>
+                  <div class="mt-6 flex flex-wrap gap-3">
+                    <a href="pages/signup.html" class="btn-primary">Create Account</a>
+                    <a href="#markets-center" class="btn-secondary">View Markets</a>
+                  </div>
+                </div>
+                <div class="rounded-xl border border-emerald-500/30 bg-[#081911] p-4">
+                  <div id="hero-slider" class="relative overflow-hidden rounded-lg" role="region" aria-roledescription="carousel" aria-label="Promotions">
+                    <div class="hero-track"></div>
+                    <div class="mt-3 flex items-center justify-between">
+                      <button type="button" class="hero-prev btn-icon" aria-label="Previous slide">&#10094;</button>
+                      <div class="hero-dots flex items-center gap-2"></div>
+                      <button type="button" class="hero-next btn-icon" aria-label="Next slide">&#10095;</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" id="stats-strip"></section>
+
+            <section id="markets-center" class="section-card mt-6">
+              <div class="section-head">
+                <h2>Markets Center</h2>
+                <a href="pages/live.html" class="section-link">Open live center</a>
+              </div>
+
+              <div class="mt-4 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+                <div id="market-tabs" class="market-tabs" role="tablist" aria-label="Market views">
+                  <button type="button" class="market-tab is-active" data-market-tab="top" role="tab" aria-selected="true" aria-controls="top-events-pane" id="market-tab-top">Top Events</button>
+                  <button type="button" class="market-tab" data-market-tab="live" role="tab" aria-selected="false" aria-controls="live-events-pane" id="market-tab-live">Live Now</button>
+                </div>
+                <label class="sr-only" for="market-search">Search markets</label>
+                <input id="market-search" type="search" placeholder="Search league or team" class="market-search" autocomplete="off" />
+              </div>
+
+              <div id="market-filters" class="mt-3 flex flex-wrap gap-2" aria-label="Sport filters"></div>
+
+              <div id="top-events-pane" class="mt-4" role="tabpanel" aria-labelledby="market-tab-top">
+                <div id="events-grid" class="grid gap-4 lg:grid-cols-2"></div>
+              </div>
+              <div id="live-events-pane" class="mt-4 hidden" role="tabpanel" aria-labelledby="market-tab-live">
+                <div id="live-grid" class="grid gap-3"></div>
+              </div>
+            </section>
+
+            <section class="section-card mt-6">
+              <div class="section-head">
+                <h2>Featured Matches</h2>
+                <a href="pages/sportsbook.html" class="section-link">More matches</a>
+              </div>
+              <div id="featured-grid" class="mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-4"></div>
+            </section>
+
+            <section class="section-card mt-6">
+              <div class="section-head">
+                <h2>Casino & Mini Games</h2>
+                <a href="pages/casino.html" class="section-link">Open casino</a>
+              </div>
+              <div id="games-grid" class="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-4"></div>
+            </section>
+
+            <section class="section-card mt-6">
+              <div class="section-head">
+                <h2>Promotions</h2>
+                <a href="pages/promotions.html" class="section-link">All promos</a>
+              </div>
+              <div id="promotions-grid" class="mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-4"></div>
+            </section>
+
+            <section class="section-card mt-6">
+              <div class="section-head">
+                <h2>Payments</h2>
+              </div>
+              <div id="payments-strip" class="mt-4 flex flex-wrap gap-2"></div>
+            </section>
+          </div>
+
+          <aside id="betslip-root" class="section-card lg:sticky lg:top-4 lg:h-fit" aria-label="Bet Slip">
+            <div class="section-head">
+              <h2>Bet Slip</h2>
+              <span id="betslip-count" class="rounded-full bg-emerald-500/15 px-2 py-0.5 text-xs font-bold text-emerald-300">0</span>
+            </div>
+            <div id="betslip-empty" class="mt-4 rounded-xl border border-emerald-500/20 bg-[#07150e] p-4">
+              <p class="text-sm font-semibold">No selection yet</p>
+              <p class="muted mt-1 text-xs">Click any odds to add to your bet slip.</p>
+            </div>
+            <ul id="betslip-selections" class="mt-4 grid gap-2"></ul>
+            <div class="mt-4 rounded-xl border border-emerald-500/20 bg-[#07150e] p-4">
+              <label class="text-xs text-slate-300" for="stake">Stake</label>
+              <input id="stake" type="number" min="1" class="mt-1 w-full rounded-md border border-emerald-500/30 bg-[#06120c] px-2 py-2 text-sm" placeholder="10" />
+              <div class="mt-3 grid gap-1 text-xs">
+                <p class="flex items-center justify-between"><span class="muted">Total Odds</span><span id="betslip-total-odds">0.00</span></p>
+                <p class="flex items-center justify-between"><span class="muted">Potential Win</span><span id="betslip-potential-win">0.00</span></p>
+              </div>
+              <div class="mt-3 grid grid-cols-2 gap-2">
+                <button id="betslip-clear" type="button" class="btn-secondary">Clear</button>
+                <button id="betslip-place" type="button" class="btn-primary">Place Bet</button>
+              </div>
+              <p id="betslip-message" class="mt-2 text-xs text-emerald-300" role="status" aria-live="polite"></p>
+            </div>
+          </aside>
+        </div>
+      </main>
+
+      <div data-component="footer"></div>
+      <div data-component="mobile-bottom-nav"></div>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
