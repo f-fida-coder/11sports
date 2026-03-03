@@ -1,25 +1,147 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Promotions | 11sport.bet</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../styles/main.css" />
-  </head>
-  <body class="bg-[#06120c] text-slate-100">
-    <div id="app" data-page="promotions">
-      <div data-component="header"></div>
-      <main class="mx-auto max-w-[1100px] px-4 py-10">
-        <section class="page-hero">
-          <p class="text-xs uppercase tracking-wide text-emerald-300">Promotions</p>
-          <h1 class="mt-2 text-3xl font-extrabold">Bonuses and Cashback Offers</h1>
-          <p class="muted mt-3 text-sm">Track all welcome offers, free bets, casino spins and weekly cashback campaigns.</p>
-          <a href="../index.html" class="btn-secondary mt-5">Back to Home</a>
-        </section>
-      </main>
-      <div data-component="footer"></div>
-    </div>
-    <script type="module" src="../js/app.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Promotions | 11sport.bet</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50: '#fdf4ff', 100: '#fae8ff', 400: '#e879f9', 500: '#d946ef', 700: '#a21caf', 900: '#701a75' }
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="../styles/main.css" />
+</head>
+
+<body class="bg-[#030108] text-slate-100 pb-20 lg:pb-0">
+  <div id="app" data-page="promotions">
+    <div data-component="header"></div>
+
+    <main class="mx-auto max-w-[1400px] px-4 py-8">
+      <!-- Promotions Header -->
+      <div class="text-center mb-12 mt-4">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 drop-shadow-[0_0_15px_rgba(232,121,249,0.5)]">
+          Exclusive <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 to-cyan-400">Promotions</span>
+        </h1>
+        <p class="text-slate-400 max-w-2xl mx-auto">Maximize your winnings with our daily boosts, welcome packages, and
+          VIP cashback offers designed for sports and casino players.</p>
+      </div>
+
+      <!-- Promo Categories -->
+      <div class="flex justify-center gap-4 mb-10 border-b border-fuchsia-500/20 pb-4">
+        <button
+          class="px-6 py-2 rounded-full bg-fuchsia-500/20 text-fuchsia-300 font-bold border border-fuchsia-500/50 shadow-[0_0_10px_rgba(232,121,249,0.3)]">All
+          Offers</button>
+        <button
+          class="px-6 py-2 rounded-full text-slate-400 hover:text-cyan-300 font-semibold transition-colors">Sports</button>
+        <button
+          class="px-6 py-2 rounded-full text-slate-400 hover:text-cyan-300 font-semibold transition-colors">Casino</button>
+        <button
+          class="px-6 py-2 rounded-full text-slate-400 hover:text-fuchsia-300 font-semibold transition-colors">VIP</button>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Promo Card 1 -->
+        <div
+          class="relative overflow-hidden rounded-2xl bg-[#0a0414] border border-fuchsia-500/40 shadow-[0_10px_30px_rgba(217,70,239,0.15)] group flex flex-col">
+          <div
+            class="h-48 bg-gradient-to-br from-fuchsia-900 to-indigo-900 relative overflow-hidden flex items-center justify-center p-6">
+            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-20">
+            </div>
+            <div class="text-center relative z-10 group-hover:scale-105 transition-transform duration-500">
+              <span
+                class="inline-block px-3 py-1 bg-black/50 backdrop-blur rounded-full text-fuchsia-300 text-xs font-bold uppercase mb-3 border border-fuchsia-500/50">Welcome
+                Offer</span>
+              <h2 class="text-3xl font-extrabold text-white drop-shadow-md">100% Up To $500</h2>
+              <p class="text-fuchsia-200 font-semibold mt-1">+ 50 Free Spins</p>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <p class="text-slate-300 text-sm mb-4">Make your first deposit today and we will double it up to $500 to
+                use in the Casino or Sportsbook.</p>
+            </div>
+            <div class="pt-4 border-t border-fuchsia-500/20 mt-auto flex items-center justify-between">
+              <button
+                class="btn-primary py-2 px-6 bg-gradient-to-r from-fuchsia-600 to-purple-600 border-none shadow-[0_0_15px_rgba(217,70,239,0.5)]">Claim
+                Now</button>
+              <a href="#" class="text-xs text-slate-500 hover:text-fuchsia-300 underline">Terms apply</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Promo Card 2 -->
+        <div
+          class="relative overflow-hidden rounded-2xl bg-[#0a0414] border border-cyan-500/40 shadow-[0_10px_30px_rgba(34,211,238,0.15)] group flex flex-col">
+          <div
+            class="h-48 bg-gradient-to-br from-cyan-900 to-blue-900 relative overflow-hidden flex items-center justify-center p-6">
+            <div class="absolute -right-10 -top-10 w-40 h-40 bg-cyan-400 rounded-full blur-[50px] opacity-30"></div>
+            <div class="text-center relative z-10 group-hover:scale-105 transition-transform duration-500">
+              <span
+                class="inline-block px-3 py-1 bg-black/50 backdrop-blur rounded-full text-cyan-300 text-xs font-bold uppercase mb-3 border border-cyan-500/50">Sportsbook</span>
+              <h2 class="text-3xl font-extrabold text-white drop-shadow-md">Accumulator Boost</h2>
+              <p class="text-cyan-200 font-semibold mt-1">Up To 50% Extra Cash</p>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <p class="text-slate-300 text-sm mb-4">Build a parlay with 4 or more selections and we'll boost your
+                winnings in cash! The more legs, the bigger the boost.</p>
+            </div>
+            <div class="pt-4 border-t border-cyan-500/20 mt-auto flex items-center justify-between">
+              <button
+                class="btn-primary py-2 px-6 bg-gradient-to-r from-cyan-600 to-blue-600 border-none shadow-[0_0_15px_rgba(34,211,238,0.5)]">Boost
+                Now</button>
+              <a href="#" class="text-xs text-slate-500 hover:text-cyan-300 underline">Terms apply</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Promo Card 3 -->
+        <div
+          class="relative overflow-hidden rounded-2xl bg-[#0a0414] border border-amber-500/40 shadow-[0_10px_30px_rgba(245,158,11,0.15)] group flex flex-col">
+          <div
+            class="h-48 bg-gradient-to-br from-amber-800 to-orange-900 relative overflow-hidden flex items-center justify-center p-6">
+            <div class="absolute inset-0 flex items-center justify-center opacity-20">
+              <div class="text-9xl transform -rotate-12 translate-y-4">🏆</div>
+            </div>
+            <div class="text-center relative z-10 group-hover:scale-105 transition-transform duration-500">
+              <span
+                class="inline-block px-3 py-1 bg-black/50 backdrop-blur rounded-full text-amber-300 text-xs font-bold uppercase mb-3 border border-amber-500/50">VIP
+                Club</span>
+              <h2 class="text-3xl font-extrabold text-white drop-shadow-md">20% Weekly Cashback</h2>
+              <p class="text-amber-200 font-semibold mt-1">On All Net Losses</p>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <p class="text-slate-300 text-sm mb-4">Join the VIP Elite program. Play your favorite games and get up to
+                20% real money cashback every Friday.</p>
+            </div>
+            <div class="pt-4 border-t border-amber-500/20 mt-auto flex items-center justify-between">
+              <button class="btn-primary bg-amber-600 border-none shadow-[0_0_15px_rgba(245,158,11,0.5)] py-2 px-6">Join
+                VIP</button>
+              <a href="#" class="text-xs text-slate-500 hover:text-amber-300 underline">Terms apply</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+    <div data-component="footer"></div>
+  </div>
+  <script type="module" src="../js/app.js"></script>
+</body>
+
 </html>

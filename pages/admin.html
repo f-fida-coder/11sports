@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11sport.bet | Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fdf4ff',
+                            100: '#fae8ff',
+                            400: '#e879f9',
+                            500: '#d946ef',
+                            700: '#a21caf',
+                            900: '#701a75'
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="../styles/main.css" />
+</head>
+
+<body class="bg-[#030108] text-slate-100">
+    <div id="app" data-page="admin">
+        <div data-component="header"></div>
+
+        <main class="mx-auto max-w-[1200px] px-4 py-8">
+            <div class="mb-8 flex items-center justify-between border-b border-fuchsia-500/20 pb-4">
+                <div>
+                    <h1 class="text-3xl font-extrabold text-white drop-shadow-[0_0_15px_rgba(232,121,249,0.5)]">Admin
+                        Dashboard</h1>
+                    <p class="mt-2 text-sm text-fuchsia-300">Seed admin login: admin@11sport.bet / password123</p>
+                </div>
+            </div>
+
+            <div class="grid gap-6 md:grid-cols-2">
+                <!-- Create Agent Form -->
+                <div class="section-card shadow-[0_4px_20px_rgba(0,0,0,0.3)] bg-[#0a0414] border-fuchsia-500/30">
+                    <h2 class="mb-4 text-xl font-bold text-fuchsia-400">Create Agent</h2>
+                    <form id="create-agent-form" class="space-y-4">
+                        <input name="name" required placeholder="Agent name"
+                            class="w-full rounded-lg border border-fuchsia-500/30 bg-[#070311] px-3 py-2 focus:ring-1 focus:ring-fuchsia-400 outline-none" />
+                        <input name="email" type="email" required placeholder="agent@email.com"
+                            class="w-full rounded-lg border border-fuchsia-500/30 bg-[#070311] px-3 py-2 focus:ring-1 focus:ring-fuchsia-400 outline-none" />
+                        <input name="password" type="password" required minlength="8" placeholder="Password (min 8)"
+                            class="w-full rounded-lg border border-fuchsia-500/30 bg-[#070311] px-3 py-2 focus:ring-1 focus:ring-fuchsia-400 outline-none" />
+                        <button type="submit"
+                            class="btn-primary w-full py-2 shadow-[0_0_15px_rgba(232,121,249,0.5)]">Create
+                            Agent</button>
+                        <p id="agent-msg" class="text-sm"></p>
+                    </form>
+                </div>
+
+                <!-- Create Player Form -->
+                <div class="section-card shadow-[0_4px_20px_rgba(0,0,0,0.3)] bg-[#0a0414] border-fuchsia-500/30">
+                    <h2 class="mb-4 text-xl font-bold text-cyan-400">Create Player</h2>
+                    <form id="create-player-form" class="space-y-4">
+                        <input name="name" required placeholder="Player name"
+                            class="w-full rounded-lg border border-fuchsia-500/30 bg-[#070311] px-3 py-2 focus:ring-1 focus:ring-cyan-400 outline-none" />
+                        <input name="email" type="email" required placeholder="player@email.com"
+                            class="w-full rounded-lg border border-fuchsia-500/30 bg-[#070311] px-3 py-2 focus:ring-1 focus:ring-cyan-400 outline-none" />
+                        <input name="password" type="password" required minlength="8" placeholder="Password (min 8)"
+                            class="w-full rounded-lg border border-fuchsia-500/30 bg-[#070311] px-3 py-2 focus:ring-1 focus:ring-cyan-400 outline-none" />
+                        <select name="agentId" id="agent-select"
+                            class="w-full rounded-lg border border-fuchsia-500/30 bg-[#070311] px-3 py-2 outline-none">
+                            <option value="">No Agent (Direct)</option>
+                        </select>
+                        <button type="submit"
+                            class="btn-primary w-full py-2 shadow-[0_0_15px_rgba(34,211,238,0.5)] bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 border-none">Create
+                            Player</button>
+                        <p id="player-msg" class="text-sm"></p>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <div data-component="footer"></div>
+    </div>
+    <script type="module" src="../js/app.js"></script>
+    <script type="module" src="../js/pages/admin.js"></script>
+</body>
+
+</html>

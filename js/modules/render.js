@@ -36,7 +36,7 @@ export function renderStats(stats, container) {
     .map(
       (item) => `
       <article class="card-elevated">
-        <p class="text-2xl font-extrabold text-emerald-400">${item.value}</p>
+        <p class="text-2xl font-extrabold text-fuchsia-400">${item.value}</p>
         <p class="muted mt-1 text-xs uppercase tracking-wide">${item.label}</p>
       </article>
     `
@@ -69,8 +69,8 @@ export function renderTopEvents(events, container) {
       (event) => `
       <article class="card-elevated">
         <div class="flex items-center justify-between gap-2">
-          <p class="text-xs font-semibold uppercase text-emerald-400">${event.league}</p>
-          <span class="rounded-full bg-emerald-500/15 px-2 py-0.5 text-[10px] font-bold uppercase text-emerald-300">${event.sport}</span>
+          <p class="text-xs font-semibold uppercase text-fuchsia-400">${event.league}</p>
+          <span class="rounded-full bg-fuchsia-500/15 px-2 py-0.5 text-[10px] font-bold uppercase text-fuchsia-300">${event.sport}</span>
         </div>
         <h3 class="mt-3 text-lg font-bold">${event.home} <span class="muted">vs</span> ${event.away}</h3>
         <p class="muted mt-1 text-xs">${event.time}</p>
@@ -90,7 +90,7 @@ export function renderFeatured(items, container) {
     .map(
       (item) => `
       <article class="card-elevated">
-        <p class="text-xs font-semibold uppercase text-emerald-300">${item.sport}</p>
+        <p class="text-xs font-semibold uppercase text-fuchsia-300">${item.sport}</p>
         <h3 class="mt-2 text-sm font-bold">${item.match}</h3>
         <div class="mt-3 flex items-center gap-2">${renderOdds(item.odds, {
           key: `${item.sport}-${item.match}`,
@@ -114,7 +114,7 @@ export function renderLiveRows(rows, container) {
       (row) => `
       <article class="live-row">
         <div>
-          <p class="text-xs uppercase text-emerald-300">${row.league}</p>
+          <p class="text-xs uppercase text-fuchsia-300">${row.league}</p>
           <p class="mt-1 text-xs text-rose-300 font-semibold">${row.minute}</p>
           <h3 class="mt-1 text-sm font-semibold">${row.home} <span class="muted">vs</span> ${row.away}</h3>
           <p class="muted text-xs">${row.score}</p>

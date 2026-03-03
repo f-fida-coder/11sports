@@ -16,7 +16,7 @@ export function initHeroSlider(slides, root) {
 
     track.innerHTML = `
       <article class="hero-item">
-        <p class="text-xs font-bold uppercase text-emerald-400">${slide.tag}</p>
+        <p class="text-xs font-bold uppercase text-fuchsia-400">${slide.tag}</p>
         <h3 class="mt-2 text-2xl font-extrabold">${slide.title}</h3>
         <p class="muted mt-2 text-sm">${slide.subtitle}</p>
         <button class="btn-primary mt-4">${slide.cta}</button>

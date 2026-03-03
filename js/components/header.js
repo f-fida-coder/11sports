@@ -18,7 +18,7 @@ function isActivePath(href) {
 export function headerTemplate(basePath = '') {
   const links = navLinks(basePath);
   return `
-    <header class="border-b border-emerald-500/20 bg-[#07150e]/95 backdrop-blur">
+    <header class="border-b border-fuchsia-500/20 bg-[#07150e]/95 backdrop-blur">
       <div class="mx-auto max-w-[1400px] px-4">
         <div class="flex items-center justify-between gap-3 py-2">
           <div class="flex items-center gap-3 text-xs">
@@ -35,8 +35,8 @@ export function headerTemplate(basePath = '') {
 
         <div class="flex items-center justify-between gap-4 py-3">
           <a href="${basePath}index.html" class="flex items-center gap-2 text-2xl font-black tracking-tight">
-            <span class="inline-flex h-8 w-8 items-center justify-center rounded bg-emerald-500 text-sm text-[#032211]">11</span>
-            <span>SPORT<span class="text-emerald-400">.BET</span></span>
+            <span class="inline-flex h-8 w-8 items-center justify-center rounded bg-fuchsia-500 text-sm text-[#032211]">11</span>
+            <span>SPORT<span class="text-fuchsia-400">.BET</span></span>
           </a>
 
           <button id="mobile-menu-toggle" class="btn-icon lg:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">☰</button>
@@ -45,7 +45,7 @@ export function headerTemplate(basePath = '') {
             ${links
               .map((item) => {
                 const active = isActivePath(item.href);
-                return `<a href="${item.href}" class="hover:text-emerald-400 ${active ? 'text-emerald-300' : ''}" ${
+                return `<a href="${item.href}" class="hover:text-fuchsia-400 ${active ? 'text-fuchsia-300' : ''}" ${
                   active ? 'aria-current="page"' : ''
                 }>${item.label}</a>`;
               })
@@ -63,8 +63,8 @@ export function headerTemplate(basePath = '') {
             ${links
               .map((item) => {
                 const active = isActivePath(item.href);
-                return `<a href="${item.href}" class="rounded px-2 py-1 hover:bg-emerald-500/10 ${
-                  active ? 'bg-emerald-500/10 text-emerald-300' : ''
+                return `<a href="${item.href}" class="rounded px-2 py-1 hover:bg-fuchsia-500/10 ${
+                  active ? 'bg-fuchsia-500/10 text-fuchsia-300' : ''
                 }" ${active ? 'aria-current="page"' : ''}>${item.label}</a>`;
               })
               .join('')}

@@ -1,25 +1,204 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Virtual Sports | 11sport.bet</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../styles/main.css" />
-  </head>
-  <body class="bg-[#06120c] text-slate-100">
-    <div id="app" data-page="virtual">
-      <div data-component="header"></div>
-      <main class="mx-auto max-w-[1100px] px-4 py-10">
-        <section class="page-hero">
-          <p class="text-xs uppercase tracking-wide text-emerald-300">Virtual Sports</p>
-          <h1 class="mt-2 text-3xl font-extrabold">24/7 Fast Virtual Action</h1>
-          <p class="muted mt-3 text-sm">Bet on virtual football, horse racing and instant-result matches anytime.</p>
-          <a href="../index.html" class="btn-secondary mt-5">Back to Home</a>
-        </section>
-      </main>
-      <div data-component="footer"></div>
-    </div>
-    <script type="module" src="../js/app.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Virtual Sports | 11sport.bet</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50: '#fdf4ff', 100: '#fae8ff', 400: '#e879f9', 500: '#d946ef', 700: '#a21caf', 900: '#701a75' }
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="../styles/main.css" />
+</head>
+
+<body class="bg-[#030108] text-slate-100 pb-20 lg:pb-0">
+  <div id="app" data-page="virtual">
+    <div data-component="header"></div>
+
+    <main class="mx-auto max-w-[1400px] px-4 py-8">
+
+      <!-- Virtual Sports Categories -->
+      <div class="flex overflow-x-auto pb-4 mb-6 gap-4 hide-scrollbar">
+        <button
+          class="relative flex-none rounded-xl overflow-hidden group w-48 h-24 border border-fuchsia-500/50 shadow-[0_0_15px_rgba(232,121,249,0.3)]">
+          <div class="absolute inset-0 bg-gradient-to-r from-fuchsia-900 to-indigo-900 z-0"></div>
+          <div class="absolute inset-0 flex items-center justify-center z-10">
+            <div class="text-center">
+              <div class="text-2xl mb-1">⚽</div>
+              <div class="font-bold text-white tracking-wide">V-League</div>
+            </div>
+          </div>
+        </button>
+        <button
+          class="relative flex-none rounded-xl overflow-hidden group w-48 h-24 border border-cyan-500/20 hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(34,211,238,0.3)] transition-all">
+          <div
+            class="absolute inset-0 bg-[#0a0414] group-hover:bg-gradient-to-r group-hover:from-cyan-900/50 group-hover:to-blue-900/50 z-0 transition-colors">
+          </div>
+          <div class="absolute inset-0 flex items-center justify-center z-10">
+            <div class="text-center">
+              <div class="text-2xl mb-1 grayscale group-hover:grayscale-0 transition-all">🏇</div>
+              <div class="font-bold text-slate-400 group-hover:text-white transition-colors">Horse Racing</div>
+            </div>
+          </div>
+        </button>
+        <button
+          class="relative flex-none rounded-xl overflow-hidden group w-48 h-24 border border-cyan-500/20 hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(34,211,238,0.3)] transition-all">
+          <div
+            class="absolute inset-0 bg-[#0a0414] group-hover:bg-gradient-to-r group-hover:from-fuchsia-900/50 group-hover:to-purple-900/50 z-0 transition-colors">
+          </div>
+          <div class="absolute inset-0 flex items-center justify-center z-10">
+            <div class="text-center">
+              <div class="text-2xl mb-1 grayscale group-hover:grayscale-0 transition-all">🐕</div>
+              <div class="font-bold text-slate-400 group-hover:text-white transition-colors">Greyhounds</div>
+            </div>
+          </div>
+        </button>
+        <button
+          class="relative flex-none rounded-xl overflow-hidden group w-48 h-24 border border-cyan-500/20 hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(34,211,238,0.3)] transition-all">
+          <div
+            class="absolute inset-0 bg-[#0a0414] group-hover:bg-gradient-to-r group-hover:from-fuchsia-900/50 group-hover:to-teal-900/50 z-0 transition-colors">
+          </div>
+          <div class="absolute inset-0 flex items-center justify-center z-10">
+            <div class="text-center">
+              <div class="text-2xl mb-1 grayscale group-hover:grayscale-0 transition-all">🏍️</div>
+              <div class="font-bold text-slate-400 group-hover:text-white transition-colors">Motorsport</div>
+            </div>
+          </div>
+        </button>
+      </div>
+
+      <div class="grid lg:grid-cols-[1fr_350px] gap-6">
+        <!-- Main Content -->
+        <div>
+          <!-- Video Player Mockup -->
+          <div
+            class="aspect-video bg-black rounded-2xl border border-fuchsia-500/30 overflow-hidden relative mb-6 shadow-[0_0_30px_rgba(217,70,239,0.15)] flex flex-col">
+            <div
+              class="absolute top-4 left-4 z-20 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
+              <span class="text-white text-xs font-bold uppercase tracking-wider">Live Broadcast</span>
+            </div>
+
+            <!-- Simulating a football pitch feed -->
+            <div
+              class="flex-1 bg-gradient-to-b from-[#1a4a2e] to-[#0f2e1a] relative flex items-center justify-center overflow-hidden">
+              <!-- Pitch lines -->
+              <div class="absolute inset-4 border-2 border-white/30 rounded"></div>
+              <div class="absolute top-1/2 left-4 right-4 h-0.5 bg-white/30 -translate-y-1/2"></div>
+              <div
+                class="absolute top-1/2 left-1/2 w-24 h-24 border-2 justify-center border-white/30 rounded-full -translate-x-1/2 -translate-y-1/2">
+              </div>
+
+              <div class="text-8xl opacity-20">⚽</div>
+
+              <!-- Score overlay -->
+              <div
+                class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/80 backdrop-blur-md px-6 py-2 rounded-lg border border-fuchsia-500/50 flex items-center gap-6">
+                <div class="text-white font-bold text-lg">London Whites</div>
+                <div class="text-fuchsia-400 font-extrabold text-2xl">1 - 0</div>
+                <div class="text-white font-bold text-lg">Manchester Blues</div>
+                <div class="text-cyan-400 font-bold ml-4">68:14</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Upcoming Events -->
+          <div
+            class="section-card bg-[#0a0414] border border-fuchsia-500/20 shadow-[0_4px_20px_rgba(0,0,0,0.3)] p-0 overflow-hidden">
+            <div
+              class="bg-gradient-to-r from-fuchsia-900/30 to-transparent p-4 flex items-center justify-between border-b border-fuchsia-500/20">
+              <h3 class="font-bold text-fuchsia-300 text-lg">Upcoming Matchdays - V-League</h3>
+            </div>
+
+            <div class="p-4 space-y-4">
+              <!-- Event 1 (Next) -->
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-white font-bold flex items-center gap-2">Matchday 24 <span
+                      class="bg-rose-500/20 text-rose-400 text-[10px] px-2 py-0.5 rounded animate-pulse border border-rose-500/30">Starts
+                      in 01:45</span></span>
+                </div>
+                <div class="grid md:grid-cols-2 gap-3">
+                  <div
+                    class="flex items-center justify-between bg-[#0d071a] p-3 rounded-lg border border-fuchsia-500/10 hover:border-cyan-400/50 transition-colors cursor-pointer group">
+                    <div class="text-slate-300 text-sm font-semibold group-hover:text-white">Madrid vs Barcelona</div>
+                    <div class="flex gap-1">
+                      <span class="bg-[#05020a] px-2 py-1 rounded text-cyan-400 text-xs font-bold">2.15</span>
+                      <span
+                        class="bg-[#05020a] px-2 py-1 rounded text-cyan-400 text-xs border border-cyan-500/30">3.40</span>
+                      <span class="bg-[#05020a] px-2 py-1 rounded text-cyan-400 text-xs font-bold">2.80</span>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center justify-between bg-[#0d071a] p-3 rounded-lg border border-fuchsia-500/10 hover:border-cyan-400/50 transition-colors cursor-pointer group">
+                    <div class="text-slate-300 text-sm font-semibold group-hover:text-white">Munich vs Dortmund</div>
+                    <div class="flex gap-1">
+                      <span class="bg-[#05020a] px-2 py-1 rounded text-cyan-400 text-xs font-bold">1.85</span>
+                      <span class="bg-[#05020a] px-2 py-1 rounded text-cyan-400 text-xs font-bold">3.60</span>
+                      <span class="bg-[#05020a] px-2 py-1 rounded text-cyan-400 text-xs font-bold">3.20</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Event 2 -->
+              <div class="opacity-70">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-slate-300 font-bold flex items-center gap-2">Matchday 25 <span
+                      class="text-slate-500 text-xs">Starts in 04:45</span></span>
+                </div>
+                <div class="grid md:grid-cols-2 gap-3">
+                  <div class="flex items-center justify-between bg-[#0d071a] p-3 rounded-lg border border-transparent">
+                    <div class="text-slate-400 text-sm">Paris vs Marseille</div>
+                    <div class="flex gap-1">
+                      <span class="bg-[#05020a] px-2 py-1 rounded text-slate-500 text-xs">1.50</span>
+                      <span class="bg-[#05020a] px-2 py-1 rounded text-slate-500 text-xs">4.20</span>
+                      <span class="bg-[#05020a] px-2 py-1 rounded text-slate-500 text-xs">5.00</span>
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-between bg-[#0d071a] p-3 rounded-lg border border-transparent">
+                    <div class="text-slate-400 text-sm">Milan vs Inter</div>
+                    <div class="flex gap-1">
+                      <span class="bg-[#05020a] px-2 py-1 rounded text-slate-500 text-xs">2.60</span>
+                      <span class="bg-[#05020a] px-2 py-1 rounded text-slate-500 text-xs">3.10</span>
+                      <span class="bg-[#05020a] px-2 py-1 rounded text-slate-500 text-xs">2.50</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar: Bet Slip for Virtuals -->
+        <aside class="hidden lg:block lg:sticky lg:top-4 lg:h-fit">
+          <div class="section-card shadow-[0_4px_20px_rgba(0,0,0,0.3)] bg-[#0a0414] border-fuchsia-500/30 p-5">
+            <h2 class="font-bold text-fuchsia-300 border-b border-fuchsia-500/20 pb-3 mb-4 text-center">Virtual Bet Slip
+            </h2>
+
+            <div class="text-center py-10">
+              <div class="text-5xl text-slate-700 mb-4 opacity-50">🎫</div>
+              <p class="text-slate-400 font-semibold">Your slip is empty</p>
+              <p class="text-sm text-slate-500 mt-2">Add virtual selections to place your bet. Results settled instantly
+                after the virtual event.</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <div data-component="footer"></div>
+  </div>
+  <script type="module" src="../js/app.js"></script>
+</body>
+
 </html>

@@ -24,7 +24,7 @@ function setStatus(form, message, ok = false) {
   if (!status) return;
 
   status.textContent = message || '';
-  status.className = ok ? 'mt-3 text-sm text-emerald-300' : 'mt-3 text-sm text-rose-300';
+  status.className = ok ? 'mt-3 text-sm text-fuchsia-300' : 'mt-3 text-sm text-rose-300';
 }
 
 export function initAuthForm(form) {

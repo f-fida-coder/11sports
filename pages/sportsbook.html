@@ -1,25 +1,328 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sportsbook | 11sport.bet</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../styles/main.css" />
-  </head>
-  <body class="bg-[#06120c] text-slate-100">
-    <div id="app" data-page="sportsbook">
-      <div data-component="header"></div>
-      <main class="mx-auto max-w-[1100px] px-4 py-10">
-        <section class="page-hero">
-          <p class="text-xs uppercase tracking-wide text-emerald-300">Sportsbook</p>
-          <h1 class="mt-2 text-3xl font-extrabold">All Sports Markets</h1>
-          <p class="muted mt-3 text-sm">Browse pre-match and in-play betting markets across football, basketball, tennis and more.</p>
-          <a href="../index.html" class="btn-secondary mt-5">Back to Home</a>
-        </section>
-      </main>
-      <div data-component="footer"></div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sportsbook | 11sport.bet</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50: '#fdf4ff', 100: '#fae8ff', 400: '#e879f9', 500: '#d946ef', 700: '#a21caf', 900: '#701a75' }
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="../styles/main.css" />
+</head>
+
+<body class="bg-[#030108] text-slate-100 pb-20 lg:pb-0">
+  <div id="app" data-page="sportsbook">
+    <div data-component="header"></div>
+
+    <!-- Top Promo Strip -->
+    <div class="bg-gradient-to-r from-fuchsia-900/80 to-cyan-900/80 border-b border-fuchsia-500/30">
+      <div class="mx-auto max-w-[1400px] px-4 py-2 flex items-center justify-between text-sm">
+        <div class="flex items-center gap-2">
+          <span class="text-xl">🔥</span>
+          <span class="font-bold text-white">Odds Boost:</span>
+          <span class="text-fuchsia-200">Arsenal, Real Madrid & Bayern to win - <span
+              class="text-cyan-400 font-bold line-through ml-1 text-xs">4.20</span> <span
+              class="text-yellow-400 font-extrabold ml-1">5.50</span></span>
+        </div>
+        <a href="#"
+          class="hidden md:block px-3 py-1 rounded bg-black/30 border border-fuchsia-500/30 text-xs font-bold text-white hover:bg-black/50 transition">Bet
+          Now</a>
+      </div>
     </div>
-    <script type="module" src="../js/app.js"></script>
-  </body>
+
+    <main class="mx-auto max-w-[1400px] px-4 py-6">
+      <div class="layout-grid">
+        <!-- Sidebar: Leagues -->
+        <aside class="hidden xl:block xl:sticky xl:top-4 xl:h-fit">
+          <div class="section-card shadow-[0_4px_20px_rgba(0,0,0,0.3)] bg-[#0a0414] border-fuchsia-500/30 mb-4">
+            <div class="mb-3 font-bold text-fuchsia-400 border-b border-fuchsia-500/20 pb-2">Popular Competitions</div>
+            <ul class="space-y-1">
+              <li><a href="#"
+                  class="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-fuchsia-500/10 text-sm text-slate-300 hover:text-white transition"><span
+                    class="w-4 text-center">🏆</span> Premier League</a></li>
+              <li><a href="#"
+                  class="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-fuchsia-500/10 text-sm text-slate-300 hover:text-white transition"><span
+                    class="w-4 text-center">🇪🇸</span> La Liga</a></li>
+              <li><a href="#"
+                  class="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-fuchsia-500/10 text-sm text-slate-300 hover:text-white transition"><span
+                    class="w-4 text-center">🇮🇹</span> Serie A</a></li>
+              <li><a href="#"
+                  class="flex items-center gap-2 px-2 py-1.5 rounded-lg bg-fuchsia-500/20 text-fuchsia-300 transition font-bold"><span
+                    class="w-4 text-center">🌍</span> Champions League</a></li>
+              <li><a href="#"
+                  class="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-fuchsia-500/10 text-sm text-slate-300 hover:text-white transition"><span
+                    class="w-4 text-center">🏀</span> NBA</a></li>
+              <li><a href="#"
+                  class="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-fuchsia-500/10 text-sm text-slate-300 hover:text-white transition"><span
+                    class="w-4 text-center">🎾</span> ATP Grand Slams</a></li>
+            </ul>
+          </div>
+
+          <div class="section-card shadow-[0_4px_20px_rgba(0,0,0,0.3)] bg-[#0a0414] border-fuchsia-500/30">
+            <div class="mb-3 font-bold text-cyan-400 border-b border-cyan-500/20 pb-2">All Sports</div>
+            <ul class="space-y-1">
+              <li><a href="#"
+                  class="flex justify-between px-2 py-1.5 rounded-lg hover:bg-cyan-500/10 text-sm text-slate-300 transition"><span>⚽
+                    Football</span> <span class="text-slate-500 text-xs text-right">1,245</span></a></li>
+              <li><a href="#"
+                  class="flex justify-between px-2 py-1.5 rounded-lg hover:bg-cyan-500/10 text-sm text-slate-300 transition"><span>🏀
+                    Basketball</span> <span class="text-slate-500 text-xs text-right">312</span></a></li>
+              <li><a href="#"
+                  class="flex justify-between px-2 py-1.5 rounded-lg hover:bg-cyan-500/10 text-sm text-slate-300 transition"><span>🎾
+                    Tennis</span> <span class="text-slate-500 text-xs text-right">188</span></a></li>
+              <li><a href="#"
+                  class="flex justify-between px-2 py-1.5 rounded-lg hover:bg-cyan-500/10 text-sm text-slate-300 transition"><span>🎮
+                    Esports</span> <span class="text-slate-500 text-xs text-right">86</span></a></li>
+              <li><a href="#"
+                  class="flex justify-between px-2 py-1.5 rounded-lg hover:bg-cyan-500/10 text-sm text-slate-300 transition"><span>🥊
+                    MMA</span> <span class="text-slate-500 text-xs text-right">41</span></a></li>
+            </ul>
+          </div>
+        </aside>
+
+        <!-- Middle Content: Matches -->
+        <div>
+          <!-- Banner -->
+          <div
+            class="relative overflow-hidden rounded-2xl bg-[#0a0414] border border-cyan-500/30 shadow-[0_0_20px_rgba(34,211,238,0.1)] p-6 mb-6">
+            <div class="absolute inset-0 bg-gradient-to-r from-cyan-900/60 to-blue-900/20 z-0"></div>
+            <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+              <div>
+                <h2 class="text-3xl font-extrabold text-white drop-shadow-[0_0_10px_rgba(34,211,238,0.5)]">UEFA
+                  Champions League</h2>
+                <p class="text-cyan-200 mt-1">Quarter Finals - Second Leg</p>
+              </div>
+              <button
+                class="btn-primary bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 border-none shadow-[0_0_15px_rgba(34,211,238,0.5)] whitespace-nowrap">View
+                All Matches</button>
+            </div>
+          </div>
+
+          <!-- In Play Highlights -->
+          <div class="mb-6">
+            <h3 class="font-bold text-lg mb-3 flex items-center gap-2 text-white"><span
+                class="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span> Live In-Play</h3>
+            <div class="grid gap-3">
+
+              <!-- Match Row 1 -->
+              <div
+                class="live-row border-rose-500/30 hover:border-rose-400 hover:shadow-[0_0_15px_rgba(244,63,94,0.15)] group">
+                <div class="flex-1 flex flex-col md:flex-row md:items-center gap-4">
+                  <div class="flex items-center gap-3 min-w-[120px]">
+                    <span class="text-rose-500 font-bold text-sm animate-pulse">2nd Half 68'</span>
+                  </div>
+                  <div class="flex-1 space-y-2 font-semibold">
+                    <div class="flex justify-between">
+                      <span class="text-white group-hover:text-fuchsia-200 transition">Real Madrid</span>
+                      <span class="text-cyan-400 font-bold">2</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-slate-300">Manchester City</span>
+                      <span class="font-bold text-slate-300">1</span>
+                    </div>
+                  </div>
+                  <div class="text-xs text-slate-500 hidden lg:block text-right min-w-[60px]">+142 Mkts</div>
+                </div>
+                <div class="flex gap-2 min-w-[200px] justify-end">
+                  <button class="odds-pill flex-1 flex flex-col items-center">
+                    <span class="text-[10px] text-slate-400">1</span>
+                    <span class="text-sm font-bold text-cyan-400">1.18</span>
+                  </button>
+                  <button class="odds-pill flex-1 flex flex-col items-center">
+                    <span class="text-[10px] text-slate-400">X</span>
+                    <span class="text-sm font-bold text-cyan-400">6.50</span>
+                  </button>
+                  <button class="odds-pill flex-1 flex flex-col items-center">
+                    <span class="text-[10px] text-slate-400">2</span>
+                    <span class="text-sm font-bold text-cyan-400">15.00</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Match Row 2 -->
+              <div
+                class="live-row border-rose-500/30 hover:border-rose-400 hover:shadow-[0_0_15px_rgba(244,63,94,0.15)] group">
+                <div class="flex-1 flex flex-col md:flex-row md:items-center gap-4">
+                  <div class="flex items-center gap-3 min-w-[120px]">
+                    <span class="text-rose-500 font-bold text-sm animate-pulse">1st Half 24'</span>
+                  </div>
+                  <div class="flex-1 space-y-2 font-semibold">
+                    <div class="flex justify-between">
+                      <span class="text-slate-300">Bayern Munich</span>
+                      <span class="font-bold text-slate-300">0</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-white group-hover:text-fuchsia-200 transition">Arsenal</span>
+                      <span class="text-cyan-400 font-bold">1</span>
+                    </div>
+                  </div>
+                  <div class="text-xs text-slate-500 hidden lg:block text-right min-w-[60px]">+135 Mkts</div>
+                </div>
+                <div class="flex gap-2 min-w-[200px] justify-end">
+                  <button class="odds-pill flex-1 flex flex-col items-center">
+                    <span class="text-[10px] text-slate-400">1</span>
+                    <span class="text-sm font-bold text-cyan-400">3.40</span>
+                  </button>
+                  <button class="odds-pill flex-1 flex flex-col items-center">
+                    <span class="text-[10px] text-slate-400">X</span>
+                    <span class="text-sm font-bold text-cyan-400">2.80</span>
+                  </button>
+                  <button class="odds-pill flex-1 flex flex-col items-center">
+                    <span class="text-[10px] text-slate-400">2</span>
+                    <span class="text-sm font-bold text-cyan-400">2.10</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Upcoming Matches -->
+          <div>
+            <h3 class="font-bold text-lg mb-3 text-white border-b border-fuchsia-500/20 pb-2">Upcoming Highlights</h3>
+            <div class="grid gap-3">
+
+              <!-- Match Row 1 -->
+              <div class="live-row hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(34,211,238,0.1)] group">
+                <div class="flex-1 flex flex-col md:flex-row md:items-center gap-4">
+                  <div class="text-sm text-slate-400 min-w-[120px]">Today 20:00</div>
+                  <div class="flex-1 space-y-1 font-semibold">
+                    <div class="text-white group-hover:text-fuchsia-200 transition">Paris SG</div>
+                    <div class="text-white group-hover:text-cyan-200 transition">Barcelona</div>
+                  </div>
+                  <div class="text-xs text-slate-500 hidden lg:block text-right min-w-[60px]">+320 Mkts</div>
+                </div>
+                <div class="flex gap-2 min-w-[200px] justify-end">
+                  <button class="odds-pill flex-1 flex flex-col items-center">
+                    <span class="text-[10px] text-slate-400">1</span>
+                    <span class="text-sm font-bold text-cyan-400">2.35</span>
+                  </button>
+                  <button class="odds-pill flex-1 flex flex-col items-center">
+                    <span class="text-[10px] text-slate-400">X</span>
+                    <span class="text-sm font-bold text-cyan-400">3.65</span>
+                  </button>
+                  <button class="odds-pill flex-1 flex flex-col items-center">
+                    <span class="text-[10px] text-slate-400">2</span>
+                    <span class="text-sm font-bold text-cyan-400">2.80</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Match Row 2 -->
+              <div class="live-row hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(34,211,238,0.1)] group">
+                <div class="flex-1 flex flex-col md:flex-row md:items-center gap-4">
+                  <div class="text-sm text-slate-400 min-w-[120px]">Tomorrow 19:45</div>
+                  <div class="flex-1 space-y-1 font-semibold">
+                    <div class="text-white group-hover:text-fuchsia-200 transition">Inter Milan</div>
+                    <div class="text-white group-hover:text-cyan-200 transition">Napoli</div>
+                  </div>
+                  <div class="text-xs text-slate-500 hidden lg:block text-right min-w-[60px]">+245 Mkts</div>
+                </div>
+                <div class="flex gap-2 min-w-[200px] justify-end">
+                  <button class="odds-pill flex-1 flex flex-col items-center">
+                    <span class="text-[10px] text-slate-400">1</span>
+                    <span class="text-sm font-bold text-cyan-400">2.10</span>
+                  </button>
+                  <button class="odds-pill flex-1 flex flex-col items-center">
+                    <span class="text-[10px] text-slate-400">X</span>
+                    <span class="text-sm font-bold text-cyan-400">3.40</span>
+                  </button>
+                  <button class="odds-pill flex-1 flex flex-col items-center">
+                    <span class="text-[10px] text-slate-400">2</span>
+                    <span class="text-sm font-bold text-cyan-400">3.60</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Match Row 3 -->
+              <div class="live-row hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(34,211,238,0.1)] group">
+                <div class="flex-1 flex flex-col md:flex-row md:items-center gap-4">
+                  <div class="text-sm text-slate-400 min-w-[120px]">Sun 16:30</div>
+                  <div class="flex-1 space-y-1 font-semibold">
+                    <div class="text-white group-hover:text-fuchsia-200 transition">Liverpool</div>
+                    <div class="text-white group-hover:text-cyan-200 transition">Aston Villa</div>
+                  </div>
+                  <div class="text-xs text-slate-500 hidden lg:block text-right min-w-[60px]">+290 Mkts</div>
+                </div>
+                <div class="flex gap-2 min-w-[200px] justify-end">
+                  <button class="odds-pill flex-1 flex flex-col items-center">
+                    <span class="text-[10px] text-slate-400">1</span>
+                    <span class="text-sm font-bold text-cyan-400">1.55</span>
+                  </button>
+                  <button class="odds-pill flex-1 flex flex-col items-center">
+                    <span class="text-[10px] text-slate-400">X</span>
+                    <span class="text-sm font-bold text-cyan-400">4.50</span>
+                  </button>
+                  <button class="odds-pill flex-1 flex flex-col items-center">
+                    <span class="text-[10px] text-slate-400">2</span>
+                    <span class="text-sm font-bold text-cyan-400">5.50</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Sidebar: Bet Slip -->
+        <aside class="hidden lg:block lg:sticky lg:top-4 lg:h-fit">
+          <div class="section-card shadow-[0_4px_20px_rgba(0,0,0,0.3)] bg-[#0a0414] border-fuchsia-500/30">
+            <div class="flex items-center justify-between border-b border-fuchsia-500/20 pb-3 mb-3">
+              <h2 class="font-bold text-fuchsia-300">Bet Slip</h2>
+              <span class="bg-fuchsia-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">1</span>
+            </div>
+
+            <!-- Mock Bet Slip Item -->
+            <div class="border border-fuchsia-500/20 rounded-lg p-3 bg-[#0d071a] mb-4 relative overflow-hidden">
+              <div class="absolute left-0 top-0 bottom-0 w-1 bg-fuchsia-500"></div>
+              <div class="flex justify-between items-start mb-1">
+                <div class="font-bold text-white text-sm">Real Madrid to Win</div>
+                <div class="font-bold text-fuchsia-400">1.18</div>
+              </div>
+              <div class="text-xs text-slate-400 mb-0.5">Match Result</div>
+              <div class="text-xs text-slate-500">Real Madrid vs Manchester City</div>
+              <button
+                class="absolute top-2 right-2 text-slate-500 hover:text-rose-400 text-lg leading-none">&times;</button>
+            </div>
+
+            <!-- Stake -->
+            <div class="border border-cyan-500/20 rounded-lg p-3 bg-[#0d071a]">
+              <div class="flex justify-between text-sm mb-2 text-slate-300">
+                <span>Total Odds</span>
+                <span class="font-bold text-white">1.18</span>
+              </div>
+              <div class="relative">
+                <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">$</span>
+                <input type="number"
+                  class="w-full bg-[#070311] border border-cyan-500/30 rounded-lg py-2 pl-7 pr-3 text-white focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
+                  placeholder="Stake amount" value="100">
+              </div>
+              <div class="flex justify-between text-sm mt-3 border-t border-cyan-500/20 pt-2">
+                <span class="text-slate-300">Potential Return</span>
+                <span class="font-bold text-cyan-400">$118.00</span>
+              </div>
+
+              <button
+                class="w-full btn-primary bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 border-none shadow-[0_0_15px_rgba(34,211,238,0.4)] mt-4 py-3 font-bold text-lg">Place
+                Bet</button>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <div data-component="footer"></div>
+  </div>
+  <script type="module" src="../js/app.js"></script>
+</body>
+
 </html>

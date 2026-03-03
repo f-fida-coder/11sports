@@ -1,25 +1,198 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Live Casino | 11sport.bet</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../styles/main.css" />
-  </head>
-  <body class="bg-[#06120c] text-slate-100">
-    <div id="app" data-page="live-casino">
-      <div data-component="header"></div>
-      <main class="mx-auto max-w-[1100px] px-4 py-10">
-        <section class="page-hero">
-          <p class="text-xs uppercase tracking-wide text-emerald-300">Live Casino</p>
-          <h1 class="mt-2 text-3xl font-extrabold">Real Dealers, Real Tables</h1>
-          <p class="muted mt-3 text-sm">Experience blackjack, roulette and baccarat streamed live with professional dealers.</p>
-          <a href="../index.html" class="btn-secondary mt-5">Back to Home</a>
-        </section>
-      </main>
-      <div data-component="footer"></div>
-    </div>
-    <script type="module" src="../js/app.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live Casino | 11sport.bet</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50: '#fdf4ff', 100: '#fae8ff', 400: '#e879f9', 500: '#d946ef', 700: '#a21caf', 900: '#701a75' }
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="../styles/main.css" />
+</head>
+
+<body class="bg-[#030108] text-slate-100 pb-20 lg:pb-0">
+  <div id="app" data-page="live-casino">
+    <div data-component="header"></div>
+
+    <main class="mx-auto max-w-[1400px] px-4 py-8">
+      <!-- Live Casino Hero Banner -->
+      <div
+        class="relative overflow-hidden rounded-2xl bg-[#0a0414] border border-cyan-500/30 shadow-[0_0_40px_rgba(34,211,238,0.1)] p-8 md:p-12 mb-10">
+        <div class="absolute inset-0 bg-gradient-to-r from-cyan-900/40 to-blue-900/20 z-0"></div>
+        <div class="relative z-10 max-w-2xl">
+          <span
+            class="inline-flex items-center gap-2 py-1 px-3 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-bold uppercase tracking-wider mb-4 border border-cyan-500/50">
+            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span> Live Dealers Online
+          </span>
+          <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 drop-shadow-[0_0_15px_rgba(34,211,238,0.5)]">
+            Real Action, <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-400">Anytime.</span>
+          </h1>
+          <p class="text-slate-300 text-lg mb-8 max-w-lg">
+            Take a seat at our premium live tables. Blackjack, Roulette, Baccarat, and interactive Game Shows hosted by
+            professional dealers 24/7.
+          </p>
+          <button
+            class="btn-primary bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 px-8 py-3 text-lg font-bold shadow-[0_0_20px_rgba(34,211,238,0.5)] border-none">Join
+            a Table</button>
+        </div>
+      </div>
+
+      <!-- Categories -->
+      <div
+        class="flex overflow-x-auto pb-2 -mx-4 px-4 md:mx-0 md:px-0 md:overflow-visible md:flex-wrap items-center gap-3 mb-8 hide-scrollbar">
+        <button
+          class="flex-none px-6 py-2 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/50 font-semibold text-sm shadow-[0_0_10px_rgba(34,211,238,0.3)]">All
+          Tables</button>
+        <button
+          class="flex-none px-6 py-2 rounded-full bg-[#0d071a] text-slate-400 border border-fuchsia-500/20 hover:border-cyan-400/50 hover:text-cyan-300 font-semibold text-sm transition-all">Roulette</button>
+        <button
+          class="flex-none px-6 py-2 rounded-full bg-[#0d071a] text-slate-400 border border-fuchsia-500/20 hover:border-cyan-400/50 hover:text-cyan-300 font-semibold text-sm transition-all">Blackjack</button>
+        <button
+          class="flex-none px-6 py-2 rounded-full bg-[#0d071a] text-slate-400 border border-fuchsia-500/20 hover:border-cyan-400/50 hover:text-cyan-300 font-semibold text-sm transition-all">Baccarat</button>
+        <button
+          class="flex-none px-6 py-2 rounded-full bg-[#0d071a] text-slate-400 border border-fuchsia-500/20 hover:border-fuchsia-400/50 hover:text-fuchsia-300 font-semibold text-sm transition-all">Game
+          Shows</button>
+      </div>
+
+      <!-- Live Games Grid -->
+      <div>
+        <h2 class="text-2xl font-bold flex items-center gap-2 mb-6">
+          <span class="text-cyan-400 text-xl">♣️</span> Top Live Tables
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+          <!-- Table Card 1 -->
+          <div
+            class="group relative rounded-xl overflow-hidden bg-[#0d071a] border border-cyan-500/30 cursor-pointer transition-all hover:shadow-[0_10px_30px_rgba(34,211,238,0.2)] hover:border-cyan-500">
+            <div
+              class="aspect-video bg-gradient-to-t from-slate-900 via-indigo-900 to-blue-900 relative p-4 flex flex-col justify-between">
+              <div class="flex justify-between items-start">
+                <span
+                  class="bg-black/60 backdrop-blur-md border border-white/10 text-white text-[10px] uppercase px-2 py-1 rounded shadow-sm flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></span>
+                  <span>1,248 Playing</span>
+                </span>
+                <span class="bg-cyan-500/90 text-black text-xs font-bold px-2 py-1 rounded">Min $5</span>
+              </div>
+              <!-- Mockup Dealer Sillhouette -->
+              <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-30 text-6xl text-cyan-200">🤵
+              </div>
+
+              <h3 class="font-bold text-xl text-white relative z-10 drop-shadow-md">Lightning Roulette</h3>
+            </div>
+            <div class="p-4 flex items-center justify-between bg-[#0a0414]">
+              <div>
+                <p class="text-xs text-slate-400 mb-0.5">Dealer: Maria</p>
+                <p class="text-xs text-fuchsia-400 font-semibold">Evolution Gaming</p>
+              </div>
+              <button
+                class="w-10 h-10 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 group-hover:bg-cyan-500 group-hover:text-black transition-colors">▶</button>
+            </div>
+          </div>
+
+          <!-- Table Card 2 -->
+          <div
+            class="group relative rounded-xl overflow-hidden bg-[#0d071a] border border-cyan-500/30 cursor-pointer transition-all hover:shadow-[0_10px_30px_rgba(34,211,238,0.2)] hover:border-cyan-500">
+            <div
+              class="aspect-video bg-gradient-to-t from-slate-900 via-green-900 to-fuchsia-900 relative p-4 flex flex-col justify-between">
+              <div class="flex justify-between items-start">
+                <span
+                  class="bg-black/60 backdrop-blur-md border border-white/10 text-white text-[10px] uppercase px-2 py-1 rounded shadow-sm flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></span>
+                  <span>842 Playing</span>
+                </span>
+                <span class="bg-cyan-500/90 text-black text-xs font-bold px-2 py-1 rounded">Min $10</span>
+              </div>
+              <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-30 text-6xl text-fuchsia-200">
+                ♠️</div>
+              <h3 class="font-bold text-xl text-white relative z-10 drop-shadow-md">VIP Blackjack</h3>
+            </div>
+            <div class="p-4 flex items-center justify-between bg-[#0a0414]">
+              <div>
+                <p class="text-xs text-slate-400 mb-0.5">Dealer: James</p>
+                <p class="text-xs text-fuchsia-400 font-semibold">Pragmatic Play Live</p>
+              </div>
+              <button
+                class="w-10 h-10 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 group-hover:bg-cyan-500 group-hover:text-black transition-colors">▶</button>
+            </div>
+          </div>
+
+          <!-- Table Card 3 -->
+          <div
+            class="group relative rounded-xl overflow-hidden bg-[#0d071a] border border-cyan-500/30 cursor-pointer transition-all hover:shadow-[0_10px_30px_rgba(34,211,238,0.2)] hover:border-cyan-500">
+            <div
+              class="aspect-video bg-gradient-to-t from-slate-900 via-fuchsia-900 to-purple-900 relative p-4 flex flex-col justify-between">
+              <div class="flex justify-between items-start">
+                <span
+                  class="bg-black/60 backdrop-blur-md border border-white/10 text-white text-[10px] uppercase px-2 py-1 rounded shadow-sm flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></span>
+                  <span>3,510 Playing</span>
+                </span>
+                <span
+                  class="bg-fuchsia-500/90 text-white text-xs font-bold px-2 py-1 rounded shadow-[0_0_10px_rgba(217,70,239,0.8)]">NEW</span>
+              </div>
+              <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-30 text-6xl text-fuchsia-200">
+                🎡</div>
+              <h3 class="font-bold text-xl text-white relative z-10 drop-shadow-md">Crazy Time</h3>
+            </div>
+            <div class="p-4 flex items-center justify-between bg-[#0a0414]">
+              <div>
+                <p class="text-xs text-slate-400 mb-0.5">Host: Anna</p>
+                <p class="text-xs text-fuchsia-400 font-semibold">Evolution Gaming</p>
+              </div>
+              <button
+                class="w-10 h-10 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 group-hover:bg-cyan-500 group-hover:text-black transition-colors">▶</button>
+            </div>
+          </div>
+
+          <!-- Table Card 4 -->
+          <div
+            class="group relative rounded-xl overflow-hidden bg-[#0d071a] border border-cyan-500/30 cursor-pointer transition-all hover:shadow-[0_10px_30px_rgba(34,211,238,0.2)] hover:border-cyan-500">
+            <div
+              class="aspect-video bg-gradient-to-t from-slate-900 via-red-900 to-rose-900 relative p-4 flex flex-col justify-between">
+              <div class="flex justify-between items-start">
+                <span
+                  class="bg-black/60 backdrop-blur-md border border-white/10 text-white text-[10px] uppercase px-2 py-1 rounded shadow-sm flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></span>
+                  <span>520 Playing</span>
+                </span>
+                <span class="bg-cyan-500/90 text-black text-xs font-bold px-2 py-1 rounded">Min $2</span>
+              </div>
+              <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-30 text-6xl text-rose-200">🎴
+              </div>
+              <h3 class="font-bold text-xl text-white relative z-10 drop-shadow-md">Speed Baccarat</h3>
+            </div>
+            <div class="p-4 flex items-center justify-between bg-[#0a0414]">
+              <div>
+                <p class="text-xs text-slate-400 mb-0.5">Dealer: Sophia</p>
+                <p class="text-xs text-fuchsia-400 font-semibold">Pragmatic Play Live</p>
+              </div>
+              <button
+                class="w-10 h-10 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 group-hover:bg-cyan-500 group-hover:text-black transition-colors">▶</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div data-component="footer"></div>
+  </div>
+  <script type="module" src="../js/app.js"></script>
+</body>
+
 </html>
